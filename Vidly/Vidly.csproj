@@ -235,9 +235,22 @@
     <Compile Include="Migrations\201707211400273_AddBirthdateToCustomer.Designer.cs">
       <DependentUpon>201707211400273_AddBirthdateToCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201707211410444_AddGenreToMovies.cs" />
+    <Compile Include="Migrations\201707211410444_AddGenreToMovies.Designer.cs">
+      <DependentUpon>201707211410444_AddGenreToMovies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707211411124_PopulateGenresTable.cs" />
+    <Compile Include="Migrations\201707211411124_PopulateGenresTable.Designer.cs">
+      <DependentUpon>201707211411124_PopulateGenresTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707211415566_AddReleaseDateToMovies.cs" />
+    <Compile Include="Migrations\201707211415566_AddReleaseDateToMovies.Designer.cs">
+      <DependentUpon>201707211415566_AddReleaseDateToMovies.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -346,6 +359,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201707211400273_AddBirthdateToCustomer.resx">
       <DependentUpon>201707211400273_AddBirthdateToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707211410444_AddGenreToMovies.resx">
+      <DependentUpon>201707211410444_AddGenreToMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707211411124_PopulateGenresTable.resx">
+      <DependentUpon>201707211411124_PopulateGenresTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707211415566_AddReleaseDateToMovies.resx">
+      <DependentUpon>201707211415566_AddReleaseDateToMovies.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

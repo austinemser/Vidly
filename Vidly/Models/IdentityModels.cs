@@ -31,5 +31,6 @@ namespace Vidly.Models
         }
 
         public System.Data.Entity.DbSet<Vidly.Models.Customer> Customers { get; set; }
+        public DbSet<Movie> Movies { get; set; }
     }
 }
