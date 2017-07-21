@@ -1,5 +1,7 @@
-﻿using Microsoft.Owin;
+﻿using AutoMapper;
+using Microsoft.Owin;
 using Owin;
+using Vidly.App_Start;
 
 [assembly: OwinStartupAttribute(typeof(Vidly.Startup))]
 namespace Vidly
