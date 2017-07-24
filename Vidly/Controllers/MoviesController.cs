@@ -55,7 +55,8 @@ namespace Vidly.Controllers
             return View("MovieForm", viewModel);
         }
 
-            public ActionResult Edit(int id)
+        [Authorize(Roles = RoleName.CanManageMovies)]
+        public ActionResult Edit(int id)
         {
             var movie = _context.Movies.SingleOrDefault(c => c.Id == id);
 
@@ -88,6 +89,7 @@ namespace Vidly.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Save(Movie movie)
         {
             if (movie.Id == 0)

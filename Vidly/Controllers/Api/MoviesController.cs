@@ -12,6 +12,7 @@ using Vidly.Models;
 
 namespace Vidly.Controllers.Api
 {
+    [Authorize]
     public class MoviesController : ApiController
     {
         private ApplicationDbContext _context;
@@ -24,6 +25,7 @@ namespace Vidly.Controllers.Api
         // GET /api/movies
         public IHttpActionResult GetMovies()
         {
+
             var movieDtos = _context.Movies
                 .Include(m => m.Genre)
                 .ToList()
@@ -47,6 +49,9 @@ namespace Vidly.Controllers.Api
         [HttpPost]
         public IHttpActionResult CreateMovie(MovieDto movieDto)
         {
+            if (!User.IsInRole(RoleName.CanManageMovies))
+                return Unauthorized();
+
             if (!ModelState.IsValid)
                 return BadRequest();
 
@@ -64,6 +69,9 @@ namespace Vidly.Controllers.Api
         [HttpPut]
         public IHttpActionResult UpdateMovie(int id, MovieDto movieDto)
         {
+            if (!User.IsInRole(RoleName.CanManageMovies))
+                return Unauthorized();
+
             if (!ModelState.IsValid)
                 return BadRequest();
 
@@ -81,6 +89,9 @@ namespace Vidly.Controllers.Api
         [HttpDelete]
         public IHttpActionResult DeleteMovie(int id)
         {
+            if (!User.IsInRole(RoleName.CanManageMovies))
+                return Unauthorized();
+
             var movieInDb = _context.Movies.SingleOrDefault(m => m.Id == id);
 
             if (movieInDb == null)
